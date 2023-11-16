@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang='ru'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport'
+        content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+
+  <script src="./scripts/axios-lib.js"></script>
+  <link rel='stylesheet' href='./styles/normalize.css'>
+  <link rel='stylesheet' href='./styles/null.css'>
+  <link rel="stylesheet" href="./styles/fonts.css">
+
+  <link rel="stylesheet" href="./styles/style.css">
+  <meta http-equiv="Content-Security-Policy" content="script-src-attr 'unsafe-inline'">
+
+  <title>Admin | AutoReddit</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <div>Админка-админочка</div>
+    </nav>
+  </header>
+  <div class="container">
+    <div class="create-user">
+        <div class="user-title">
+            <p>Создать нового пользователя</p>
+        </div>
+        <div>
+            <input class="create-user-input" type="text" id="create-user-input">
+        </div>
+        <div class="create-btn" id="create-btn">
+            <div class="btn">Создать</div>
+        </div>
+    </div>
+    <div class="all-users-container">
+
+    </div>
+  </div>
+  <footer>♥</footer>
+
+  <script src='./scripts/axios.js'></script>
+  <script src="./scripts/admin.js"></script>
+</body>
+</html>

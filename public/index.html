@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang='ru'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport'
+        content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+
+  <script src="./scripts/axios-lib.js"></script>
+  <link rel='stylesheet' href='./styles/normalize.css'>
+  <link rel='stylesheet' href='./styles/null.css'>
+  <link rel="stylesheet" href="./styles/fonts.css">
+
+  <link rel="stylesheet" href="./styles/style.css">
+  <meta http-equiv="Content-Security-Policy" content="script-src-attr 'unsafe-inline'">
+
+  <title>Main | AutoReddit</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="">
+        <div>
+          Посты
+        </div>
+      </a>
+      <a href="/accs.html">
+        <div>
+          Аккаунты
+        </div>
+      </a>
+    </nav>
+  </header>
+  <div class="popup__bg"> 
+    <div class="popup">
+        <img src="images/close.svg" class="close-popup">
+        <label>
+            <select style="outline: none; margin: 20px 0px 10px 0px;" id="create__post__account__id" name="name">
+              
+            </select>
+            <div class="label__text">
+                ID аккаунта
+            </div>
+        </label>
+        <label>
+            <input id="create__post__subreddit__names" type="text" name="tel">
+            <div class="label__text">
+                Имена субреддитов
+            </div>
+        </label>
+        <label>
+          <input id="create__post__title" type="text" name="tel">
+          <div class="label__text">
+              Заголовок
+          </div>
+        </label>
+        <label id="create__post__text__label">
+          <input id="create__post__text" type="text" name="tel">
+          <div class="label__text">
+              Текст
+          </div>
+        </label>
+        <label id="create__post__image__label">
+          <input id="create__post__image" type="text" name="tel">
+          <div class="label__text">
+              Ссылка на изображение
+          </div>
+        </label>
+        <label>
+          <input id="create__post__time" type="datetime-local" name="tel">
+          <div class="label__text">
+              Время
+          </div>
+        </label>
+        <label>
+          <input id="create__post__isNSFW" type="checkbox" name="tel">
+          <div class="label__text">
+            isNSFW
+          </div>
+        </label>
+        <div style="margin: 5px 0px;" id="create__error"></div>
+        <button id="create__post__button">Отправить</button>
+      </div>
+  </div>
+  <div class="popup__bg2"> 
+    <div class="popup2">
+        <img src="images/close.svg" class="close-popup2">
+        <label>
+            <input id="change__post__subreddit__names" type="text" name="tel">
+            <div class="label__text">
+                Имена субреддитов
+            </div>
+        </label>
+        <label>
+          <input id="change__post__title" type="text" name="tel">
+          <div class="label__text">
+              Заголовок
+          </div>
+        </label>
+        <label id="change__text__label">
+        </label>
+        <label id="change__image__label">
+        </label>
+        <label>
+          <input id="change__post__time" type="datetime-local" name="tel">
+          <div class="label__text">
+              Время
+          </div>
+        </label>
+        <label>
+          <input id="change__post__isNSFW" type="checkbox" name="tel">
+          <div class="label__text">
+            isNSFW
+          </div>
+        </label>
+        <div style="margin: 5px 0px;" id="change__error"></div>
+        <button id="change__post__button">Изменить</button>
+      </div>
+  </div>
+  <div class="container">
+    <div class="posts"></div>
+    <div class="add-post">
+      <a href="#" class="open-popup"> <div class="btn"> <p>Создать пост</p> </div> </a>
+    </div>
+    <div class="post-update">
+    </div>
+  </div>
+  <footer>♥</footer>
+
+  <script src='./scripts/axios.js'></script>
+  <script src="./scripts/post.js"></script>
+</body>
+</html>

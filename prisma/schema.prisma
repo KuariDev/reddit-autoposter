@@ -1,0 +1,76 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String    @id @default(uuid())
+  password String    @unique
+  role     Role      @default(USER)
+  accounts Account[]
+
+  refreshToken String?
+
+  created_at DateTime @default(now())
+}
+
+model Account {
+  id String @id @default(uuid())
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+
+  userAgent    String
+  login        String
+  password     String
+  clientId     String
+  clientSecret String
+
+  posts Post[]
+}
+
+model Post {
+  id String @id @default(uuid())
+
+  subbreditNames String[]
+  title          String
+  imageUrl       String?
+  text           String?
+  isNSFW         Boolean  @default(false)
+
+  postInSeconds Int?
+  send_at       DateTime?
+  isSent        Boolean   @default(false)
+
+  createdPosts CreatedPost[]
+  account      Account       @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  accountId    String
+
+  errors     Error[]
+  created_at DateTime @default(now())
+}
+
+model CreatedPost {
+  id  String @id @default(uuid())
+  url String
+
+  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId String
+
+  created_at DateTime @default(now())
+}
+
+model Error {
+  id     String @id @default(uuid())
+  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId String
+}
+
+enum Role {
+  USER
+  ADMIN
+}

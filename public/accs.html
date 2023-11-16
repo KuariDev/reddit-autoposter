@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang='ru'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport'
+        content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+
+  <script src="./scripts/axios-lib.js"></script>
+  <link rel='stylesheet' href='./styles/normalize.css'>
+  <link rel='stylesheet' href='./styles/null.css'>
+  <link rel="stylesheet" href="./styles/fonts.css">
+
+  <link rel="stylesheet" href="./styles/style.css">
+  <meta http-equiv="Content-Security-Policy" content="script-src-attr 'unsafe-inline'">
+
+  <title>Accs | AutoReddit</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/index.html">
+        <div>
+          Посты
+        </div>
+      </a>
+      <a href="/">
+        <div>
+          Аккаунты
+        </div>
+      </a>
+    </nav>
+  </header>
+  <div class="popup__bg"> 
+    <div class="popup">
+        <img src="images/close.svg" class="close-popup">
+        <label>
+            <input id="create__account__login" type="text" name="name">
+            <div class="label__text">
+                Логин
+            </div>
+        </label>
+        <label>
+            <input id="create__account__password" type="tel" name="tel">
+            <div class="label__text">
+                Пароль
+            </div>
+        </label>
+        <label>
+          <input id="create__account__clientId" type="tel" name="tel">
+          <div class="label__text">
+              ID клиента
+          </div>
+        </label>
+        <label>
+          <input id="create__account__clientSecret" type="tel" name="tel">
+          <div class="label__text">
+              Секрет клиента
+          </div>
+        </label>
+        <div style="margin: 5px 0px;" id="account__error"></div>
+        <button id="create__account__button">Отправить</button>
+    </div>
+  </div>  
+  <div class="container">
+    <div class="accs"></div>
+    <div class="add-acc">
+      <a href="#" class="open-popup"> <div class="btn"> <p>Добавить аккаунт</p> </div> </a>
+    </div>
+  </div>
+  <footer>♥</footer>
+  <script src='./scripts/axios.js'></script>
+  <script src="./scripts/accs.js"></script>
+</body>
+</html>
